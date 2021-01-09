@@ -4,6 +4,7 @@ import Login from './components/login'
 import Calander from './components/calander'
 import Player from './components/player'
 import {Header, Footer} from './components/common'
+import Community from './components/community'
 
 const App = () => {
   return (
@@ -25,6 +26,9 @@ const App = () => {
           </Route>
           <Route path="/register" exact>
             <Register />
+          </Route>
+          <Route path="/community" exact>
+            <Community />
           </Route>
         </Switch>
         <Footer />

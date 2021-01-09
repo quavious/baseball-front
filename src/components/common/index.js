@@ -23,7 +23,7 @@ export const Header = () => {
                         <Nav.Link href="/" className="font-weight-bold text-dark pl-2 pr-1">HYENAS</Nav.Link>
                         <Nav.Link href="/player" className="font-weight-bold text-dark pl-2 pr-1">PLAYERS</Nav.Link>
                         <Nav.Link href="/" className="font-weight-bold text-dark pl-2 pr-1">GAME EVENT</Nav.Link>
-                        <Nav.Link href="/" className="font-weight-bold text-dark pl-2 pr-1">COMMUNITY</Nav.Link>
+                        <Nav.Link href="/community" className="font-weight-bold text-dark pl-2 pr-1">COMMUNITY</Nav.Link>
                         <Nav.Link href="/" className="font-weight-bold text-dark pl-2 pr-1">HYENAS STORE</Nav.Link>
                         <Nav.Link href="/login" className="font-weight-light header-link pl-2 pr-1">
                             로그인
