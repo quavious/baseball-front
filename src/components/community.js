@@ -1,5 +1,4 @@
 import { Container, DropdownButton, FormControl, InputGroup, Dropdown, Button, Table, Pagination } from "react-bootstrap";
-import {Fragment} from 'react'
 
 const tableWidth = (num) => {
     return {
