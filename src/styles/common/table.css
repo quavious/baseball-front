@@ -1,0 +1,10 @@
+.table-more-line th,
+.table-more-line td {
+  white-space: normal;
+  padding: 2px 1px;
+}
+
+td,
+th {
+  white-space: nowrap;
+}

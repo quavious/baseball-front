@@ -1,5 +1,5 @@
 import { Col, Container, Nav, Row } from "react-bootstrap";
-import "../styles/player.css"
+import "../../styles/player.css"
 
 export default function Player(){
     return (

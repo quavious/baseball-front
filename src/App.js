@@ -5,6 +5,11 @@ import Calander from './components/calander'
 import Player from './components/player'
 import {Header, Footer} from './components/common'
 import Community from './components/community'
+import CommunityParam from './components/community/params'
+import CommunityWrite from './components/community/write'
+import PlayerParam from './components/player/params'
+import Result01 from './components/result/result01'
+import Result02 from './components/result/result02'
 
 const App = () => {
   return (
@@ -12,24 +17,19 @@ const App = () => {
       <Header />
       <Router>
         <Switch>
-          <Route path="/" exact>
+          <Route path="/" exact >
             <h1>Home</h1>
           </Route>
-          <Route path="/calander" exact>
-            <Calander />
-          </Route>
-          <Route path="/player" exact>
-            <Player />
-          </Route>
-          <Route path="/login" exact>
-            <Login />
-          </Route>
-          <Route path="/register" exact>
-            <Register />
-          </Route>
-          <Route path="/community" exact>
-            <Community />
-          </Route>
+          <Route path="/calander" exact component={Calander} />
+          <Route path="/player" exact component={Player} />
+          <Route path="/player/:id" exact component={PlayerParam} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/register" exact component={Register} />
+          <Route path="/community" exact component={Community} />
+          <Route path="/community/post/:id" exact component={CommunityParam} />
+          <Route path="/community/write" exact component={CommunityWrite} />
+          <Route path="/result/01" exact component={Result01} />
+          <Route path="/result/02" exact component={Result02} />
         </Switch>
         <Footer />
       </Router>
