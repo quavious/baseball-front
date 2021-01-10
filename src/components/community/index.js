@@ -1,6 +1,8 @@
 import { Container, DropdownButton, FormControl, InputGroup, Dropdown, Button, Table, Pagination } from "react-bootstrap";
 import {useState, useEffect} from 'react'
 
+import "../../styles/common/color.css"
+
 const tableWidth = (num) => {
     return {
         width: num,
@@ -17,7 +19,7 @@ const CommunityList = ({flag, title}) => {
         return (
             <tr key={`table_row_${idx}`}>
                 <td style={tableWidth(50)} className="text-center">
-                    {idx < 3 ? "공지" : el}
+                    {idx < 3 ? <strong className="theme-color-font">공지</strong> : el}
                 </td>
                 <td className="table-title">{
                     <a href={`/community/post/${el}`}>
@@ -62,12 +64,12 @@ export default function Community(){
     return (
         <Container>
             <h3 className="text-center">COMMUNITY</h3>
-            <InputGroup className="my-3">
+            <InputGroup className="my-3 theme-color-border">
                 <DropdownButton
-                as={InputGroup.Prepend}
-                variant="outline-secondary"
-                title="Dropdown"
-                id="input-group-dropdown-1"
+                    as={InputGroup.Prepend}
+                    variant="outline-dark"
+                    title="Dropdown"
+                    id="input-group-dropdown-1"
                 >
                     <Dropdown.Item href="#">Action</Dropdown.Item>
                     <Dropdown.Item href="#">Another action</Dropdown.Item>
@@ -76,18 +78,18 @@ export default function Community(){
                     <Dropdown.Item href="#">Separated link</Dropdown.Item>
                 </DropdownButton>
                 <FormControl aria-describedby="basic-addon1"/>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" className="theme-color-background">
                     검색하기
                 </Button>
             </InputGroup>
             <Table hover style={{border: "0"}}>
-                <thead className="table-primary">
+                <thead className="table-normal">
                     <tr>
-                    <th style={tableWidth(50)} className="text-center">번호</th>
-                    <th className="table-title">제목</th>
-                    <th style={tableWidth(70)} className="text-center">글쓴이</th>
-                    <th style={tableWidth(90)} className="text-center">등록일</th>
-                    <th style={tableWidth(70)} className="text-center">조회수</th>
+                    <th style={tableWidth(50)} className="text-center theme-color-font">번호</th>
+                    <th className="table-title theme-color-font">제목</th>
+                    <th style={tableWidth(70)} className="text-center theme-color-font">글쓴이</th>
+                    <th style={tableWidth(90)} className="text-center theme-color-font">등록일</th>
+                    <th style={tableWidth(70)} className="text-center theme-color-font">조회수</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -96,10 +98,10 @@ export default function Community(){
             </Table>
             <div className="d-flex justify-content-between align-items-center">
                 <div></div>
-                <Pagination size="sm">
+                <Pagination size="sm" >
                     <PaginationItems />
                 </Pagination>
-                <Button className="mt-1">글쓰기</Button>
+                <Button className="mt-1 theme-color-background">글쓰기</Button>
             </div>
         </Container>
     )

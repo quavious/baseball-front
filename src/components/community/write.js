@@ -1,5 +1,7 @@
 import { Container, Form, Button } from "react-bootstrap";
 
+import "../../styles/common/color.css"
+
 export default function CommunityWrite(){
     return (
         <Container>
@@ -22,7 +24,7 @@ export default function CommunityWrite(){
                     <Form.Group controlId="formBasicCheckbox" className="my-0 mr-4">
                         <Form.Check type="checkbox" label="비밀글" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" className='theme-color-background'>
                         문의하기
                     </Button>
                 </div>

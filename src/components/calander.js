@@ -1,5 +1,9 @@
+import { Container } from "react-bootstrap";
+
 export default function Calander() {
     return (
-        <div>Calander Page</div>
+        <Container>
+            <h1>Calendar Page</h1>
+        </Container>
     )
 }

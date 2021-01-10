@@ -45,9 +45,8 @@ export default function PlayerParam({match}) {
                     </div>
                 </Col>
             </Row>
-            <div className="table-responsive">
             <Table className="mt-4" hover responsive bordered style={{border: "0"}} >
-                <thead className="table-primary">
+                <thead className="table-primary theme-color-table">
                     <tr>
                         <th style={tableWidth(80)}></th>
                         <th className="text-center">경기</th>
@@ -82,7 +81,6 @@ export default function PlayerParam({match}) {
                     </tr>
                 </tbody>
             </Table>
-            </div>
         </Container>
     )
 }

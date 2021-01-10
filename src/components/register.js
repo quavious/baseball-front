@@ -1,6 +1,7 @@
 import { Button, Container, Form, Row } from "react-bootstrap";
 
-import "../styles/login.css"
+import "../styles/register.css"
+import "../styles/common/color.css"
 
 export default function Register() {
     return (
@@ -13,24 +14,33 @@ export default function Register() {
                     height="48"
                     className="header-logo"
                 />
-                <span className="font-weight-bold text-dark">스코어본 하이에나들</span>
+                <span className="font-weight-bold text-dark" style={{letterSpacing: "-1.3px"}}>스코어본 하이에나들</span>
             </Row>
             <Form className="mt-4 px-4">
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Control type="email" placeholder="이메일" />
+                <Form.Group controlId="formBasicID" className="d-flex justify-content-start align-items-center">
+                    <Form.Label htmlFor="userid" className="my-0 mr-1" style={{whiteSpace: "nowrap"}}>아이디</Form.Label>
+                    <Form.Control type="text" id="userid" name="userid" placeholder="아이디" className="form-group-width ml-auto"/>
                 </Form.Group>
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Control type="password" placeholder="비밀번호" />
+                <Form.Group controlId="formBasicPassword" className="d-flex justify-content-start align-items-center">
+                    <Form.Label htmlFor="password" className="my-0 mr-1" style={{whiteSpace: "nowrap"}}>비밀번호</Form.Label>
+                    <Form.Control type="password" id="password" name="password" placeholder="비밀번호" className="form-group-width ml-auto"/>
                 </Form.Group>
-                <div className="my-2 d-flex justify-content-between align-items-center">
-                <Form.Group controlId="formBasicCheckbox" className="my-0">
-                    <Form.Check type="checkbox" label="자동로그인"/>
+                <Form.Group controlId="formBasicUsername" className="d-flex justify-content-start align-items-center">
+                    <Form.Label htmlFor="username" className="my-0 mr-1" style={{whiteSpace: "nowrap"}}>닉네임</Form.Label>
+                    <Form.Control type="text" id="username" name="username" placeholder="닉네임" className="form-group-width ml-auto"/>
                 </Form.Group>
-                    <div>
-                        <small><a href="/">아이디 찾기</a> | <a href="/">비밀번호 찾기</a></small>
-                    </div>
-                </div>
-                <Button type="submit" className="w-100 button-custom">
+                <Form.Group controlId="formBasicUsername" className="d-flex justify-content-start align-items-center">
+                    <Form.Label htmlFor="username" className="my-0 mr-1" style={{whiteSpace: "nowrap"}}>닉네임</Form.Label>
+                    <Form.Control type="text" id="username" name="username" placeholder="닉네임" className="form-group-width ml-auto"/>
+                </Form.Group>
+                <Form.Group controlId="formBasicPhoneNumber" className="d-flex justify-content-start align-items-center">
+                    <Form.Label htmlFor="phone" className="my-0 mr-1" style={{whiteSpace: "nowrap"}}>연락처</Form.Label>
+                    <Form.Control type="text" id="phone" placeholder="연락처" className="form-group-width ml-auto"/>
+                </Form.Group>
+                <Form.Group controlId="formBasicCheckbox" className="">
+                    <Form.Check type="checkbox" label="전체동의"/>
+                </Form.Group>
+                <Button type="submit" className="w-100 button-custom theme-color-background">
                     Submit
                 </Button>
             </Form>

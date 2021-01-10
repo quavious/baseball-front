@@ -4,6 +4,11 @@
   z-index: 100;
 }
 
+.bg-primary {
+  background-color: rgb(0, 26, 77) !important;
+  border-color: rgb(0, 26, 77) !important;
+}
+
 .header-logo {
   margin-right: 8px;
 }

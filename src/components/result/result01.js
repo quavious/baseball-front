@@ -1,14 +1,15 @@
 import { Col, Container, Row, Table } from "react-bootstrap";
 
 import "../../styles/common/table.css"
+import "../../styles/common/color.css"
 
 export default function Result01(){
     return (
         <Container>
-            <h2 className="text-center font-weight-bold">독립야구단 경기도리그</h2>
+            <h2 className="text-center font-weight-bold theme-color-font">독립야구단 경기도리그</h2>
             <Row className="mt-4">
                 <Col lg={6}>
-                    <strong>| 순위표</strong>
+                    <strong className='theme-color-font'>| 순위표</strong>
                     <Table className="mt-4" hover responsive style={{border: "0"}} >
                         <thead className="table-secondary">
                             <tr>
@@ -35,16 +36,16 @@ export default function Result01(){
                     </Table>
                 </Col>
                 <Col lg={6}>
-                    <strong>| 상대전적</strong>
+                    <strong className='theme-color-font'>| 상대전적</strong>
                     <Table className="mt-4" hover bordered responsive style={{border: "0"}} >
                         <thead className="table-secondary">
                             <tr className="table-more-line">
                                 <th className="text-center"></th>
-                                <th className="text-center">상대팀<br />상대팀</th>
-                                <th className="text-center">상대팀<br />상대팀</th>
-                                <th className="text-center">상대팀<br />상대팀</th>
-                                <th className="text-center">상대팀<br />상대팀</th>
-                                <th className="text-center">상대팀<br />상대팀</th>
+                                <th className="text-center font-weight-normal">상대팀<br />상대팀</th>
+                                <th className="text-center font-weight-normal">상대팀<br />상대팀</th>
+                                <th className="text-center font-weight-normal">상대팀<br />상대팀</th>
+                                <th className="text-center font-weight-normal">상대팀<br />상대팀</th>
+                                <th className="text-center font-weight-normal">상대팀<br />상대팀</th>
                             </tr>
                         </thead>
                         <tbody>
