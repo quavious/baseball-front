@@ -1,0 +1,58 @@
+.calendar-change {
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: 2px solid gray;
+}
+
+.calendar-week,
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+}
+
+.calendar-week {
+  border-top: 3px solid black;
+}
+
+.calendar-week div {
+  width: 100%;
+  padding: 3px 0;
+  text-align: center;
+  border-bottom: 0.5px solid gray;
+  border-left: 0.5px solid gray;
+  border-right: 0.5px solid gray;
+  font-weight: 500;
+}
+
+.calendar-saturday {
+  color: blue;
+}
+
+.calendar-days > div {
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  text-align: start;
+  border-bottom: 0.5px solid gray;
+  border-left: 0.5px solid gray;
+  border-right: 0.5px solid gray;
+}
+
+.calendar-days div span {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+}
+
+.calendar-days > div > img {
+  margin-top: 8px;
+  width: 100%;
+  max-width: 24px;
+  height: auto;
+}
+
+.calendar-sunday {
+  color: red;
+}

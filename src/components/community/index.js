@@ -57,7 +57,7 @@ export default function Community(){
     }, [flag])
     const active = 1
     const PaginationItems = () => [1,2,3,4,5].map(number => (
-        <Pagination.Item key={number} active={number === active}>
+        <Pagination.Item key={number} active={number === active} >
             {number}
         </Pagination.Item>
     ))

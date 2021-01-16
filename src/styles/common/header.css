@@ -16,3 +16,11 @@
 .header-link {
   text-decoration: none;
 }
+
+.nav-item > .dropdown-toggle::after {
+  content: none;
+}
+
+.nav-item > .dropdown-toggle {
+  color: white !important;
+}

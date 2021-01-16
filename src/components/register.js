@@ -18,28 +18,52 @@ export default function Register() {
             </Row>
             <Form className="mt-4 px-4">
                 <Form.Group controlId="formBasicID" className="d-flex justify-content-start align-items-center">
-                    <Form.Label htmlFor="userid" className="my-0 mr-1" style={{whiteSpace: "nowrap"}}>아이디</Form.Label>
+                    <Form.Label htmlFor="userid" className="my-0 mr-1 font-weight-bold" style={{whiteSpace: "nowrap"}}>아이디</Form.Label>
                     <Form.Control type="text" id="userid" name="userid" placeholder="아이디" className="form-group-width ml-auto"/>
                 </Form.Group>
                 <Form.Group controlId="formBasicPassword" className="d-flex justify-content-start align-items-center">
-                    <Form.Label htmlFor="password" className="my-0 mr-1" style={{whiteSpace: "nowrap"}}>비밀번호</Form.Label>
+                    <Form.Label htmlFor="password" className="my-0 mr-1 font-weight-bold" style={{whiteSpace: "nowrap"}}>비밀번호</Form.Label>
                     <Form.Control type="password" id="password" name="password" placeholder="비밀번호" className="form-group-width ml-auto"/>
                 </Form.Group>
                 <Form.Group controlId="formBasicUsername" className="d-flex justify-content-start align-items-center">
-                    <Form.Label htmlFor="username" className="my-0 mr-1" style={{whiteSpace: "nowrap"}}>닉네임</Form.Label>
+                    <Form.Label htmlFor="username" className="my-0 mr-1 font-weight-bold" style={{whiteSpace: "nowrap"}}>닉네임</Form.Label>
                     <Form.Control type="text" id="username" name="username" placeholder="닉네임" className="form-group-width ml-auto"/>
                 </Form.Group>
                 <Form.Group controlId="formBasicUsername" className="d-flex justify-content-start align-items-center">
-                    <Form.Label htmlFor="username" className="my-0 mr-1" style={{whiteSpace: "nowrap"}}>닉네임</Form.Label>
+                    <Form.Label htmlFor="username" className="my-0 mr-1 font-weight-bold" style={{whiteSpace: "nowrap"}}>닉네임</Form.Label>
                     <Form.Control type="text" id="username" name="username" placeholder="닉네임" className="form-group-width ml-auto"/>
                 </Form.Group>
                 <Form.Group controlId="formBasicPhoneNumber" className="d-flex justify-content-start align-items-center">
-                    <Form.Label htmlFor="phone" className="my-0 mr-1" style={{whiteSpace: "nowrap"}}>연락처</Form.Label>
+                    <Form.Label htmlFor="phone" className="my-0 mr-1 font-weight-bold" style={{whiteSpace: "nowrap"}}>연락처</Form.Label>
                     <Form.Control type="text" id="phone" placeholder="연락처" className="form-group-width ml-auto"/>
                 </Form.Group>
-                <Form.Group controlId="formBasicCheckbox" className="">
-                    <Form.Check type="checkbox" label="전체동의"/>
+                <Form.Group controlId="formBasicCheckbox" className="d-flex justify-content-start align-items-center">
+                    <Form.Label htmlFor="agree" className="my-0 mr-1 font-weight-bold" style={{whiteSpace: "nowrap"}}>이용약관동의</Form.Label>
+                    <Form.Check type="checkbox" id="agree" label="전체동의" className="form-group-width ml-auto"/>
                 </Form.Group>
+                <div className="d-flex justify-content-center">
+                    <Form.Group controlId="formBasicCheckbox" className="mx-auto d-inline-flex flex-column align-items-center justify-content-center px-4">
+                        <div className="mt-1 d-flex align-items-center justify-content-between w-100">
+                            <Form.Check type="checkbox" label="이용약관 (필수)"/>
+                            <small className="theme-color-font">약관보기 {">>"}</small>
+                        </div>
+                        <div className="mt-1 d-flex align-items-center justify-content-between w-100">
+                            <Form.Check type="checkbox" label="개인정보처리방침 (필수)"/>
+                            <small className="theme-color-font">약관보기 {">>"}</small>
+                        </div>
+                        <div className="mt-1 d-flex align-items-center justify-content-between w-100">
+                            <Form.Check type="checkbox" label="개인정보처리방침 (선택)"/>
+                            <small className="theme-color-font">약관보기 {">>"}</small>
+                        </div>
+                        <div className="mt-1 d-flex flex-column justify-content-center align-items-center w-100">
+                            <Form.Check type="checkbox" label="무료배송,할인쿠폰 등 혜택/정보 수신(선택)"/>
+                            <div className="mt-1 d-flex justify-content-between w-100 px-4">
+                                <Form.Check type="checkbox" label="SMS"/>
+                                <Form.Check type="checkbox" label="이메일"/>
+                            </div>
+                        </div>
+                    </Form.Group>
+                </div>
                 <Button type="submit" className="w-100 button-custom theme-color-background">
                     Submit
                 </Button>

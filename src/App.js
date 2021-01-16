@@ -3,24 +3,44 @@ import Register from './components/register'
 import Login from './components/login'
 import Calander from './components/calander'
 import Player from './components/player'
-import {Header, Footer} from './components/common'
+import {Header, Footer, FooterMobile} from './components/common'
 import Community from './components/community'
 import CommunityParam from './components/community/params'
 import CommunityWrite from './components/community/write'
 import PlayerParam from './components/player/params'
 import Result01 from './components/result/result01'
 import Result02 from './components/result/result02'
+import {useState, useEffect} from 'react';
 
 const App = () => {
+  const [width, setWidth] = useState(false)
+  useEffect(() => {
+    window.addEventListener("resize", function(e){
+      const newWidth = e.target.screen.width
+      if (newWidth < 992) {
+        setWidth(true)
+      } else {
+        setWidth(false)
+      }
+    })
+    return () => window.removeEventListener("resize", function(e) {
+      const newWidth = e.target.screen.width
+      if (newWidth < 992) {
+        setWidth(true)
+      } else {
+        setWidth(false)
+      }
+    })
+  }, [])
   return (
     <>
       <Header />
       <Router>
         <Switch>
-          <Route path="/" exact >
+          <Route path="/" exact>
             <h1>Home</h1>
           </Route>
-          <Route path="/calander" exact component={Calander} />
+          <Route path="/calander" exact component={Calander}/>
           <Route path="/player" exact component={Player} />
           <Route path="/player/:id" exact component={PlayerParam} />
           <Route path="/login" exact component={Login} />
@@ -31,7 +51,7 @@ const App = () => {
           <Route path="/result/01" exact component={Result01} />
           <Route path="/result/02" exact component={Result02} />
         </Switch>
-        <Footer />
+        {width ? <FooterMobile /> : <Footer />}
       </Router>
     </>
   );
