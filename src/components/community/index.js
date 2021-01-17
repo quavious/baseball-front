@@ -36,7 +36,8 @@ const CommunityList = ({flag, title}) => {
     })
 }
 
-export default function Community(){
+export default function Community({main}){
+    console.log(!main)
     const [flag, setFlag] = useState(false)
     const title = "예시질문입니다예시질문입니다예시질문입니다예시질문입니다."
     useEffect(() => {

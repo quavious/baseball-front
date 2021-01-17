@@ -1,6 +1,7 @@
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Register from './components/register'
 import Login from './components/login'
+import Main from './components/main'
 import Calander from './components/calander'
 import Player from './components/player'
 import {Header, Footer, FooterMobile} from './components/common'
@@ -37,9 +38,7 @@ const App = () => {
       <Header />
       <Router>
         <Switch>
-          <Route path="/" exact>
-            <h1>Home</h1>
-          </Route>
+          <Route path="/" exact main={true} component={Main}/>
           <Route path="/calander" exact component={Calander}/>
           <Route path="/player" exact component={Player} />
           <Route path="/player/:id" exact component={PlayerParam} />

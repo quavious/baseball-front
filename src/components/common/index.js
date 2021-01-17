@@ -3,6 +3,7 @@ import "../../styles/common/header.css"
 import Navbar from 'react-bootstrap/Navbar'
 import { Container, Nav, NavDropdown } from "react-bootstrap"
 
+
 export const Header = () => {
     return (
         <Navbar className="header fixed-top" expand="lg" bg="primary" variant="dark">
