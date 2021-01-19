@@ -12,8 +12,9 @@ const tableWidth = (num) => {
 
 export default function PlayerParam({match}) {
     const {params: {id}} = match
+    const tableHead = ["경기", "승", "패", "세", "홀드", "이닝", "피연타", "피홈런", "볼넷", "사구", "삼진", "실점", "자책점", "승률", "평균 자책점"]
     return (
-        <Container>
+        <Container className="my-4">
             <h3 className="text-center mb-4">Player {id}</h3>
             <Row className="w-100 mx-0">
                 <Col lg={6} className="d-flex justify-content-center align-items-center bg-secondary px-4 mx-auto" style={{width: 400, height: 480}}>
@@ -49,21 +50,9 @@ export default function PlayerParam({match}) {
                 <thead className="table-primary theme-color-table">
                     <tr>
                         <th style={tableWidth(80)}></th>
-                        <th className="text-center">경기</th>
-                        <th className="text-center">승</th>
-                        <th className="text-center">패</th>
-                        <th className="text-center">세</th>
-                        <th className="text-center">홀드</th>
-                        <th className="text-center">이닝</th>
-                        <th className="text-center">피연타</th>
-                        <th className="text-center">피홈런</th>
-                        <th className="text-center">볼넷</th>
-                        <th className="text-center">사구</th>
-                        <th className="text-center">삼진</th>
-                        <th className="text-center">실점</th>
-                        <th className="text-center">자책점</th>
-                        <th className="text-center">승률</th>
-                        <th className="text-center">평균 자책점</th>
+                        {tableHead.map(el => (
+                            <th className="text-center">{el}</th>
+                        ))}
                     </tr>
                 </thead>
                 <tbody>

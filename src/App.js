@@ -39,16 +39,18 @@ const App = () => {
       <Router>
         <Switch>
           <Route path="/" exact main={true} component={Main}/>
-          <Route path="/calander" exact component={Calander}/>
-          <Route path="/player" exact component={Player} />
-          <Route path="/player/:id" exact component={PlayerParam} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/register" exact component={Register} />
-          <Route path="/community" exact component={Community} />
-          <Route path="/community/post/:id" exact component={CommunityParam} />
-          <Route path="/community/write" exact component={CommunityWrite} />
-          <Route path="/result/01" exact component={Result01} />
-          <Route path="/result/02" exact component={Result02} />
+          <div className="my-4">
+            <Route path="/calander" exact component={Calander}/>
+            <Route path="/player" exact component={Player} />
+            <Route path="/player/:id" exact component={PlayerParam} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/register" exact component={Register} />
+            <Route path="/community" exact component={Community} />
+            <Route path="/community/post/:id" exact component={CommunityParam} />
+            <Route path="/community/write" exact component={CommunityWrite} />
+            <Route path="/result/01" exact component={Result01} />
+            <Route path="/result/02" exact component={Result02} />
+          </div>
         </Switch>
         {width ? <FooterMobile /> : <Footer />}
       </Router>

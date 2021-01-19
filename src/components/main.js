@@ -8,8 +8,8 @@ import "../styles/common/color.css"
 library.add(faAmazon, faFacebook, faInstagram, faYoutube)
 
 const mainBody = `
-    body {
-        padding-top: 0px !important;
+    .header {
+        margin-bottom: 0px !important;
     }
 `
 

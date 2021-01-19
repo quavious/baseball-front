@@ -3,34 +3,25 @@ import {useState, useEffect} from 'react'
 
 import "../../styles/common/color.css"
 
-const tableWidth = (num) => {
-    return {
-        width: num,
-        minWidth: num-10,
-        paddingLeft: 0,
-        paddingRight: 0,
-    }
-}
-
 const CommunityList = ({flag, title}) => {
-    const arr = [12,11,10,9,8,7,6,5,4,3,2,1]
     const created = new Date().toISOString().split("T")[0]
-    return arr.map((el, idx) => {
+    return Array.from({length: 12}).map((_, idx) => {
+        const el = 12 - idx
         return (
             <tr key={`table_row_${idx}`}>
-                <td style={tableWidth(50)} className="text-center">
+                <td className="text-center">
                     {idx < 3 ? <strong className="theme-color-font">공지</strong> : el}
                 </td>
                 <td className="table-title">{
                     <a href={`/community/post/${el}`}>
-                    {flag ? title.slice(0, 12)+"..." : title}
+                    {flag ? title.slice(0, 12)+"..." : title.slice(0, 35)}
                     </a>
                 }</td>
-                <td style={tableWidth(70)} className="text-center">Otto</td>
-                <td style={tableWidth(90)} className="text-center">
+                <td className="text-center">Otto</td>
+                <td className="text-center">
                     {flag ? created.slice(2) : created}
                 </td>
-                <td style={tableWidth(70)} className="text-center">{el*100}</td>
+                <td className="text-center">{el*100}</td>
             </tr>
         )
     })
@@ -86,11 +77,11 @@ export default function Community({main}){
             <Table hover style={{border: "0"}}>
                 <thead className="table-normal">
                     <tr>
-                    <th style={tableWidth(50)} className="text-center theme-color-font">번호</th>
+                    <th className="text-center theme-color-font">번호</th>
                     <th className="table-title theme-color-font">제목</th>
-                    <th style={tableWidth(70)} className="text-center theme-color-font">글쓴이</th>
-                    <th style={tableWidth(90)} className="text-center theme-color-font">등록일</th>
-                    <th style={tableWidth(70)} className="text-center theme-color-font">조회수</th>
+                    <th className="text-center theme-color-font">글쓴이</th>
+                    <th className="text-center theme-color-font">등록일</th>
+                    <th className="text-center theme-color-font">조회수</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -99,10 +90,10 @@ export default function Community({main}){
             </Table>
             <div className="d-flex justify-content-between align-items-center">
                 <div></div>
-                <Pagination size="sm" >
+                <Pagination size="sm" className="mt-2 mb-4 ">
                     <PaginationItems />
                 </Pagination>
-                <Button className="mt-1 theme-color-background">글쓰기</Button>
+                <Button className="mt-2 mb-4 theme-color-background">글쓰기</Button>
             </div>
         </Container>
     )

@@ -13,8 +13,9 @@ const tableWidth = (num) => {
 }
 
 export default function Result02(){
+    const tableHead = ["선수명", "팀명", "AVG", 'G', "PA", "AB", "R", 'H', '2B', '3B', 'HR', 'TB', 'RBI', 'SAC', "SF"]
     return (
-        <Container>
+        <Container className="my-4">
             <h2 className="text-center font-weight-bold theme-color-font">기록실</h2>
             <Nav fill justify variant="pills" defaultActiveKey="player" className="mt-4">
                 <Nav.Item>
@@ -32,25 +33,13 @@ export default function Result02(){
                     <Nav.Link eventKey="catcher" className="border border-dark mx-2 rounded-pill py-1 px-4">투수</Nav.Link>
                 </Nav.Item>
             </Nav>
-            <Table className="mt-4" hover responsive style={{border: "0"}} >
+            <Table className="my-4" hover responsive style={{border: "0"}} >
                 <thead className="table-secondary result-table-head">
                     <tr>
                         <th style={tableWidth(80)}></th>
-                        <th className="text-center">선수명</th>
-                        <th className="text-center">팀명</th>
-                        <th className="text-center">AVG</th>
-                        <th className="text-center">G</th>
-                        <th className="text-center">PA</th>
-                        <th className="text-center">AB</th>
-                        <th className="text-center">R</th>
-                        <th className="text-center">H</th>
-                        <th className="text-center">2B</th>
-                        <th className="text-center">3B</th>
-                        <th className="text-center">HR</th>
-                        <th className="text-center">TB</th>
-                        <th className="text-center">RBI</th>
-                        <th className="text-center">SAC</th>
-                        <th className="text-center">SF</th>
+                        {tableHead.map(el => (
+                            <th className="text-center">{el}</th>                            
+                        ))}
                     </tr>
                 </thead>
                 <tbody>

@@ -6,7 +6,7 @@ import { Container, Nav, NavDropdown } from "react-bootstrap"
 
 export const Header = () => {
     return (
-        <Navbar className="header fixed-top" expand="lg" bg="primary" variant="dark">
+        <Navbar className="header mb-4" expand="lg" bg="primary" variant="dark">
             <Container>
                 <Navbar.Brand href="/" className="mr-4 d-flex align-items-center">
                     <img
@@ -62,7 +62,7 @@ export const Header = () => {
 
 export const Footer = () => {
     return (
-        <div className="footer fixed-bottom py-4">
+        <div className="footer py-4">
             <Container className="d-flex align-items-start">
             <img src='/baseball_logo.svg' width="64" alt="Baseball Logo" className="footer-logo"/>
             <div className="d-flex flex-column ml-4">
@@ -90,7 +90,7 @@ export const Footer = () => {
 
 export const FooterMobile = () => {
     return (
-        <div className="footer fixed-bottom py-4">
+        <div className="footer py-4">
             <Container className="d-flex flex-column justify-content-center align-items-center">
             <div className="d-flex justify-content-center align-items-center">
                 <img src='/baseball_logo.svg' width="48" alt="Baseball Logo" className="footer-logo mx-1"/>
