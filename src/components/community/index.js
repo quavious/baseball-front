@@ -2,6 +2,7 @@ import { Container, DropdownButton, FormControl, InputGroup, Dropdown, Button, T
 import {useState, useEffect} from 'react'
 
 import "../../styles/common/color.css"
+import { Link } from "react-router-dom";
 
 const CommunityList = ({flag, title}) => {
     const created = new Date().toISOString().split("T")[0]
@@ -93,7 +94,7 @@ export default function Community({main}){
                 <Pagination size="sm" className="mt-2 mb-4 ">
                     <PaginationItems />
                 </Pagination>
-                <Button className="mt-2 mb-4 theme-color-background">글쓰기</Button>
+                <Button className="mt-2 mb-4 theme-color-background"><Link to="/community/write">글쓰기</Link></Button>
             </div>
         </Container>
     )

@@ -14,7 +14,7 @@ export default function CommunityWrite(){
 
                 <Form.Group controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control as="textarea" rows={8} placeholder="" />
+                    <Form.Control as="textarea" rows={12} placeholder="" />
                 </Form.Group>
                 <Form.Group>
                     <Form.File id="exampleFormControlFile1" label="첨부파일" />

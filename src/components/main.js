@@ -4,38 +4,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faYoutube, faInstagram, faAmazon} from '@fortawesome/free-brands-svg-icons' 
 import "../styles/main.css"
 import "../styles/common/color.css"
+import { useEffect } from "react";
+import { Header } from "./common";
 
 library.add(faAmazon, faFacebook, faInstagram, faYoutube)
 
-const mainBody = `
-    .header {
-        margin-bottom: 0px !important;
-    }
-`
-
-export default function Main(){
-    // ERROR :: Cleanup function is not working
-    // useEffect(() => {
-    //     if(!navButton) return;
-    //     navButton.addEventListener("click", function() {
-    //         if (!collapsed) {
-    //             setCollapsed(true)
-    //         } else {
-    //             setCollapsed(false)
-    //         }
-    //     })
-    //     return () => navButton.removeEventListener("click", function() {
-    //         if (!collapsed) {
-    //             setCollapsed(true)
-    //         } else {
-    //             setCollapsed(false)
-    //         }
-    //     })
-    // }, [collapsed, navButton])
+export default function Main({location: {pathname}}){
+    useEffect(() => {
+        if(pathname === "/"){
+            document.querySelector(".header").style.display = "none"
+        }
+    }, [pathname])
     return (
         <>
-        <style>{mainBody}</style>
-        <div style={{width: "100%", top: 0, zIndex : -100, position: "relative"}}>
+        <Header isRoot={true}/>
+        <div style={{width: "100%", position: "relative"}}>
             <Carousel className="">
                 <Carousel.Item>
                     <img
@@ -71,12 +54,6 @@ export default function Main(){
                     </div>
                 </Carousel.Item> */}
             </Carousel>
-            <div className="d-inline-flex flex-column align-items-center theme-color-background px-2 py-2 show-icon" style={{position: "absolute", bottom: "60px", right: "40px"}}>
-                <FontAwesomeIcon icon={['fab', 'facebook']} size="3x" className="my-2" color="white"/>
-                <FontAwesomeIcon icon={['fab', 'amazon']} size="3x" className="my-2" color="white"/>
-                <FontAwesomeIcon icon={['fab', 'instagram']} size="3x" className="my-2" color="white"/>
-                <FontAwesomeIcon icon={['fab', 'youtube']} size="3x" className="my-2" color="white"/>
-            </div>
         </div>
         <Container>
            <Row className="px-2 mt-2">
@@ -111,88 +88,74 @@ export default function Main(){
                         </Nav.Item>
                     </Nav>
                     <div className="bg-secondary px-4 py-3 pb-2">
-                        <div className="d-flex justify-content-between w-100 pt-1 py-1">
+                        {Array.from({length: 6}).map((_, idx) => (
+                        <>
+                        <div key={idx} className="d-flex justify-content-between w-100 pt-1 py-1">
                             <span>1. 2021년 서포터즈 모집</span>
                             <small>2021.01.01</small>
                         </div>
-                        <hr className="my-1"/>
-                        <div className="d-flex justify-content-between w-100 pt-1 py-1">
-                            <span>1. 2021년 서포터즈 모집</span>
-                            <small>2021.01.01</small>
-                        </div>
-                        <hr className="my-1" />
-                        <div className="d-flex justify-content-between w-100 pt-1 py-1">
-                            <span>1. 2021년 서포터즈 모집</span>
-                            <small>2021.01.01</small>
-                        </div>
-                        <hr className="my-1" />
-                        <div className="d-flex justify-content-between w-100 pt-1 py-1">
-                            <span>1. 2021년 서포터즈 모집</span>
-                            <small>2021.01.01</small>
-                        </div>
-                        <hr className="my-1" />
-                        <div className="d-flex justify-content-between w-100 pt-1 py-1">
-                            <span>1. 2021년 서포터즈 모집</span>
-                            <small>2021.01.01</small>
-                        </div>
-                        <hr className="my-1" />
-                        <div className="d-flex justify-content-between w-100 pt-1 py-1">
-                            <span>1. 2021년 서포터즈 모집</span>
-                            <small>2021.01.01</small>
-                        </div>
+                        {idx !== 5 ? <hr className="my-1"/> : null}
+                        </>
+                        ))}
                     </div>
                </Col>
            </Row>
-           <Row className="px-2 py-2 my-2 bg-secondary">
-               <Col lg={5}>
-                   <strong className="theme-color-font my-2">2021. 01</strong>
-                   <div className="bg-light mt-2 mb-4" style={{height: 220}}></div>
-               </Col>
-               <Col lg={7}>
-                   <strong className="theme-color-font my-2">TEAM RANKING</strong>
-                    <Table className="mt-4 w-100" hover responsive style={{border: "0"}} >
-                        <thead className="table-secondary result-table-head">
-                            <tr>
-                                <th className="text-center">순위</th>
-                                <th className="text-center">팀명</th>
-                                <th className="text-center">경기</th>
-                                <th className="text-center">승</th>
-                                <th className="text-center">패</th>
-                                <th className="text-center">무</th>
-                                <th className="text-center">승률</th>
-                                <th className="text-center">게임차</th>
-                                <th className="text-center">연속</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td className="text-center py-1">1</td>
-                                {Array.from({length: 9}).map(() => <td className="text-center py-1"></td>)}
-                            </tr>
-                            <tr>
-                                <td className="text-center py-1">2</td>
-                                {Array.from({length: 9}).map(() => <td className="text-center py-1"></td>)}
-                            </tr>
-                            <tr>
-                                <td className="text-center py-1">3</td>
-                                {Array.from({length: 9}).map(() => <td className="text-center py-1"></td>)}
-                            </tr>
-                            <tr>
-                                <td className="text-center py-1">4</td>
-                                {Array.from({length: 9}).map(() => <td className="text-center py-1"></td>)}
-                            </tr>
-                            <tr>
-                                <td className="text-center py-1">5</td>
-                                {Array.from({length: 9}).map(() => <td className="text-center py-1"></td>)}
-                            </tr>
-                            <tr>
-                                <td className="text-center py-1">6</td>
-                                {Array.from({length: 9}).map(() => <td className="text-center py-1"></td>)}
-                            </tr>
-                        </tbody>
-                    </Table>
-               </Col>
-           </Row>
+        </Container>
+        <Container fluid className="bg-secondary px-4 pt-2 pb-4 my-4">
+            <Container>
+                <Row className="my-2">
+                    <Col lg={5}>
+                        <strong className="theme-color-font my-2">2021. 01</strong>
+                        <div className="bg-light mt-2 mb-4" style={{height: 220}}></div>
+                    </Col>
+                    <Col lg={7}>
+                        <strong className="theme-color-font my-2">TEAM RANKING</strong>
+                        <Table className="mt-4 w-100" hover responsive style={{border: "0"}} >
+                            <thead className="table-secondary result-table-head">
+                                <tr>
+                                    <th className="text-center">순위</th>
+                                    <th className="text-center">팀명</th>
+                                    <th className="text-center">경기</th>
+                                    <th className="text-center">승</th>
+                                    <th className="text-center">패</th>
+                                    <th className="text-center">무</th>
+                                    <th className="text-center">승률</th>
+                                    <th className="text-center">게임차</th>
+                                    <th className="text-center">연속</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td className="text-center py-1">1</td>
+                                    {Array.from({length: 9}).map((_, idx) => <td key={idx} className="text-center py-1"></td>)}
+                                </tr>
+                                <tr>
+                                    <td className="text-center py-1">2</td>
+                                    {Array.from({length: 9}).map((_, idx) => <td key={idx} className="text-center py-1"></td>)}
+                                </tr>
+                                <tr>
+                                    <td className="text-center py-1">3</td>
+                                    {Array.from({length: 9}).map((_, idx) => <td key={idx} className="text-center py-1"></td>)}
+                                </tr>
+                                <tr>
+                                    <td className="text-center py-1">4</td>
+                                    {Array.from({length: 9}).map((_, idx) => <td key={idx} className="text-center py-1"></td>)}
+                                </tr>
+                                <tr>
+                                    <td className="text-center py-1">5</td>
+                                    {Array.from({length: 9}).map((_, idx) => <td key={idx} className="text-center py-1"></td>)}
+                                </tr>
+                                <tr>
+                                    <td className="text-center py-1">6</td>
+                                    {Array.from({length: 9}).map((_, idx) => <td key={idx} className="text-center py-1"></td>)}
+                                </tr>
+                            </tbody>
+                        </Table>
+                    </Col>
+                </Row>
+            </Container>
+        </Container>
+        <Container>
            <>
            <Nav variant="pills" defaultActiveKey="documentary" className="mt-4 justify-content-center">
                 <Nav.Item>
@@ -224,6 +187,12 @@ export default function Main(){
            </Row>
            </>
         </Container>
+        <div className="d-inline-flex flex-column align-items-center theme-color-background px-2 py-2 show-icon" style={{position: "fixed", bottom: "60px", right: "40px"}}>
+            <FontAwesomeIcon icon={['fab', 'facebook']} size="3x" className="my-2" color="white"/>
+            <FontAwesomeIcon icon={['fab', 'amazon']} size="3x" className="my-2" color="white"/>
+            <FontAwesomeIcon icon={['fab', 'instagram']} size="3x" className="my-2" color="white"/>
+            <FontAwesomeIcon icon={['fab', 'youtube']} size="3x" className="my-2" color="white"/>
+        </div>
         </>
     )
 }

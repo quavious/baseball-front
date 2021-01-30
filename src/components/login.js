@@ -1,6 +1,7 @@
 import { Button, Container, Form, Row } from "react-bootstrap";
 
 import "../styles/login.css"
+import "../styles/common/color.css"
 
 export default function Login() {
     return (
@@ -30,7 +31,7 @@ export default function Login() {
                         <small><a href="/">아이디 찾기</a> | <a href="/">비밀번호 찾기</a></small>
                     </div>
                 </div>
-                <Button type="submit" className="w-100 button-custom">
+                <Button type="submit" className="w-100 button-custom theme-color-border">
                     Submit
                 </Button>
             </Form>
