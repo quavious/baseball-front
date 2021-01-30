@@ -1,3 +1,19 @@
+# Baseball Front Page
+
+URL Path List
+
+- "/"
+- "/player"
+- "/player/1"
+- "/calander"
+- "/login"
+- "/register"
+- "/community"
+- "/community/post/1"
+- "/community/write"
+- "/result/01"
+- "/result/02"
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
