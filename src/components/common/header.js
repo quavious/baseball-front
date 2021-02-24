@@ -85,6 +85,9 @@ export const HeaderPC = ({root}) => {
         if(!drop) {
             setBg("primary");
             setDrop(true);
+        } else {
+            setBg("transparent");
+            setDrop(false);
         }
     }
     const handleBlur = (e) => {

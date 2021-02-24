@@ -18,15 +18,19 @@ const App = () => {
   const [mobile, isMobile] = useState(false)
   useEffect(() => {
     const handleMobile = function(e){
-      const newWidth = e.target.screen.width
+      const newWidth = window.screen.width
       if (newWidth < 992) {
         isMobile(true)
       } else {
         isMobile(false)
       }
     }
+    window.addEventListener("load", handleMobile)
     window.addEventListener("resize", handleMobile)
-    return () => window.removeEventListener("resize", handleMobile)
+    return () => {
+      window.removeEventListener("load", handleMobile)
+      window.removeEventListener("resize", handleMobile)
+    }
   }, [])
   return (
     <>
