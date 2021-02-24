@@ -4,20 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faYoutube, faInstagram, faAmazon} from '@fortawesome/free-brands-svg-icons' 
 import "../styles/main.css"
 import "../styles/common/color.css"
-import { useEffect } from "react";
-import { Header } from "./common";
 
 library.add(faAmazon, faFacebook, faInstagram, faYoutube)
 
-export default function Main({location: {pathname}}){
-    useEffect(() => {
-        if(pathname === "/"){
-            document.querySelector(".header").style.display = "none"
-        }
-    }, [pathname])
+export default function Main(){
     return (
         <>
-        <Header isRoot={true}/>
         <div style={{width: "100%", position: "relative"}}>
             <Carousel className="">
                 <Carousel.Item>

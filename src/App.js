@@ -1,10 +1,11 @@
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {Switch, Route, useLocation} from 'react-router-dom'
 import Register from './components/register'
 import Login from './components/login'
 import Main from './components/main'
 import Calander from './components/calander'
 import Player from './components/player'
-import {Header, Footer, FooterMobile} from './components/common'
+import {Header} from './components/common/header'
+import {Footer, FooterMobile} from './components/common/footer'
 import Community from './components/community'
 import CommunityParam from './components/community/params'
 import CommunityWrite from './components/community/write'
@@ -14,31 +15,24 @@ import Result02 from './components/result/result02'
 import {useState, useEffect} from 'react';
 
 const App = () => {
-  const [width, setWidth] = useState(false)
+  const [mobile, isMobile] = useState(false)
   useEffect(() => {
-    window.addEventListener("resize", function(e){
+    const handleMobile = function(e){
       const newWidth = e.target.screen.width
       if (newWidth < 992) {
-        setWidth(true)
+        isMobile(true)
       } else {
-        setWidth(false)
+        isMobile(false)
       }
-    })
-    return () => window.removeEventListener("resize", function(e) {
-      const newWidth = e.target.screen.width
-      if (newWidth < 992) {
-        setWidth(true)
-      } else {
-        setWidth(false)
-      }
-    })
+    }
+    window.addEventListener("resize", handleMobile)
+    return () => window.removeEventListener("resize", handleMobile)
   }, [])
   return (
     <>
-      <Header />
-      <Router>
+      <Header root={useLocation().pathname === "/"} mobile={mobile}/>
         <Switch>
-          <Route path="/" exact main={true} component={Main}/>
+          <Route path="/" exact component={Main}/>
           <div className="my-4">
             <Route path="/calander" exact component={Calander}/>
             <Route path="/player" exact component={Player} />
@@ -52,8 +46,7 @@ const App = () => {
             <Route path="/result/02" exact component={Result02} />
           </div>
         </Switch>
-        {width ? <FooterMobile /> : <Footer />}
-      </Router>
+        {mobile ? <FooterMobile /> : <Footer />}
     </>
   );
 }

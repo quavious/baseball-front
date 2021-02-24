@@ -11,7 +11,19 @@
   color: rgb(0, 26, 77);
 }
 
-.form-group-width {
+.form-control-custom {
   width: 100%;
   max-width: 400px;
+  border: none;
+  border-bottom: 1px solid #ced4da;
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+.input-height {
+  height: 42px;
+}
+
+.position-right {
+  right: 5px;
 }
