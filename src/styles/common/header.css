@@ -78,3 +78,16 @@
   list-style: none;
   padding: 0px;
 }
+
+.nav-menu-pc h6 {
+  white-space: nowrap;
+}
+
+.nav-menu-pc section {
+  max-width: 160px;
+  width: 100%;
+}
+
+.nav-login-pc {
+  width: 160px;
+}

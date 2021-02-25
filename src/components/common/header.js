@@ -112,8 +112,8 @@ export const HeaderPC = ({root}) => {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav" className="d-flex align-items-start pt-2" onClick={handleFocus} onBlur={handleBlur}>
-                    <Nav className="mx-auto pt-2">
-                        <section className="mr-1">
+                    <Nav className="mx-auto pt-2 nav-menu-pc">
+                        <section className="mr-4">
                         <h6 className={`${root ? "text-white" : "text-dark"} font-weight-bold`}>HYENAS</h6>
                         <ul id="basic-nav-dropdown_hyenas" className={`font-weight-bold navbar-ul ${drop ? "d-block": "d-none"}`}>
                             <Link to="/"><li className={root? "text-light mt-2" : "text-dark mt-2"}>구단소개</li></Link>
@@ -121,7 +121,7 @@ export const HeaderPC = ({root}) => {
                             <Link to="/"><li className={root? "text-light mt-2" : "text-dark mt-2"}>조직도</li></Link>
                         </ul>
                         </section>
-                        <section className="mr-1">
+                        <section className="mr-4">
                         <h6 className={`${root ? "text-white" : "text-dark"} font-weight-bold`}>PLAYERS</h6>
                         <ul id="basic-nav-dropdown_players" className={`font-weight-bold navbar-ul ${drop ? "d-block": "d-none"}`}>
                             <Link to="/player"><li className={root? "text-light mt-2" : "text-dark mt-2"}>감독/코치진</li></Link>
@@ -132,16 +132,16 @@ export const HeaderPC = ({root}) => {
                             <Link to="/"><li className={root? "text-light mt-2" : "text-dark mt-2"}>이달의 하이에나</li></Link> 
                         </ul>
                         </section>
-                        <Link to="/" className="font-weight-bold nav-white" ><h6 className={`${root ? "text-white" : "text-dark"} font-weight-bold mr-1`}>GAME EVENT</h6></Link>
-                        <section className="mr-1">
+                        <Link to="/" className="font-weight-bold nav-white mr-4" ><h6 className={`${root ? "text-white" : "text-dark"} font-weight-bold`}>GAME EVENT</h6></Link>
+                        <section className="mr-4">
                         <h6 className={`${root ? "text-white" : "text-dark"} font-weight-bold`}>COMMUNITY</h6>
                         <ul title="COMMUNITY" id="basic-nav-dropdown_community" className={`font-weight-bold navbar-ul ${drop ? "d-block": "d-none"}`}>
                             <Link to="/community"><li className={`${root? "text-light" : "text-dark"} mt-2`}>소식</li></Link>
                             <Link to="/community/post/12"><li className={`${root? "text-light" : "text-dark"} mt-2`}>사진</li></Link>
                         </ul>
                         </section>
-                        <Link to="/" className="font-weight-bold nav-white"><h6 className={`${root ? "text-white" : "text-dark"} font-weight-bold mr-1`}>HYENAS STORE</h6></Link>
-                        <section className="mr-1">
+                        <Link to="/" className="font-weight-bold nav-white mr-4"><h6 className={`${root ? "text-white" : "text-dark"} font-weight-bold`}>HYENAS STORE</h6></Link>
+                        <section className="mr-4">
                         <h6 className={`${root ? "text-white" : "text-dark"} font-weight-bold`}>
                             BOARD
                         </h6>
@@ -152,7 +152,7 @@ export const HeaderPC = ({root}) => {
                         </ul>
                         </section>
                     </Nav>
-                    <Nav className="ml-auto">
+                    <Nav className="ml-auto nav-login-pc">
                         <Nav.Link href="/login" className="font-weight-light header-link">
                             로그인
                         </Nav.Link>
